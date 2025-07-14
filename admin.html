@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin</title>
+  <script src="admin.js"></script>
+</head>
+<body>
+  <div class="addC">
+    <h>Adicionar candidatos</h>
+    <p>nome do candidato</p>
+    <input id="nomeCandidato">
+    <p>numero do eleitor</p>
+    <input id="numeroEleit">
+    <button onclick="addCand()">adicionar candidato</button>
+  </div>
+  <div class="result">
+    <button onclick="WhoWin()">mostrar resultado</button>
+    <button onclick="reniciar()">reniciar votacao</button>
+    <div id="resulT"></div>
+  </div>
+</body>
+</html>

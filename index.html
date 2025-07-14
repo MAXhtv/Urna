@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    .laranja{
+      background-color: #FFA500;
+    }
+    .confirm{
+      background-color: #4CAF50;
+    }
+    .preto{
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      position: absolute;
+      margin-top:-56px ;
+      margin-left: 330px;
+      background-color:#808080;
+      padding-block: 1rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 5px;
+      width: 700px;
+    }
+    #bnt-click{
+      padding: 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      float: right;
+      background-color: #000;
+      color: white;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URNA ELEITORAL</title>
+</head>
+<script src="index.js"></script>
+
+<body>
+  <div class="inputs">
+    <form action="">
+      <input size="2" id="campo1" value="" maxlength="2" type="text" readonly="readonly" style="font-size: 40px; text-align: center;"/>
+      <input size="2" id="campo2" value="" maxlength="2" type="text" readonly="readonly" style="font-size:40px; text-align: center;"/>
+    </form>
+  </div>
+  <div class="preto" id="preto">
+    <button class="bnt-click" id="bnt-click" onclick="put(1)">1</button>
+    <button class="bnt-click" id="bnt-click" onclick="put(2)">2</button>
+    <button class="bnt-click" id="bnt-click" onclick="put(3)">3</button>
+    <button id="bnt-click" onclick="put(4)">4</button>
+    <button id="bnt-click" onclick="put(5)">5</button>
+    <button id="bnt-click" onclick="put(6)">6</button>
+    <button id="bnt-click" onclick="put(7)">7</button>
+    <button id="bnt-click" onclick="put(8)">8</button>
+    <button id="bnt-click" onclick="put(9)">9</button>
+    <button id="bnt-click" onclick="put(0)">0</button>
+    <div class="tecl">
+      <button class="laranja" onclick="correc()">CORRIGIR</button>
+      <button class="confirm" onclick="votar()">CONFIRMAR</button>
+    </div>
+  </div>
+  <script>
+    let title=localStorage.getItem("titulo")
+    if (!title){
+      const titulo=prompt("insira o titulo ou aperte em 'cancelar': ")
+      if(titulo){
+        localStorage.setItem("titulo", titulo)
+        title=titulo
+      }
+    }
+    if (title){
+      const eh=document.createElement("h1")
+      eh.textContent=title
+      document.body.insertBefore(eh, document.body.firstChild)
+    }
+</script>
+</body>
+</html>
